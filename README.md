@@ -1,116 +1,122 @@
 Predictive Analysis of Metro Traffic Using Weather, Holiday, and Environmental Data
 
-📌 Overview
-Urban transportation systems face growing congestion challenges, impacting both operational efficiency and commuter satisfaction. This project applies Machine Learning to forecast metro traffic volume using weather, holiday, and environmental data. The insights can help authorities optimize train frequency, allocate resources effectively, and improve commuter experience.
+# 🚇 Predictive Analysis of Metro Traffic Using Weather, Holiday, and Environmental Data
 
-📊 Abstract
-Accurate metro traffic prediction allows for:
+![Project Banner](2676973a-f407-4751-8df7-feb272d16f35.png)
 
-Optimized train schedules
+## 📌 Overview
+Urban transportation systems face increasing congestion, impacting operational efficiency and commuter satisfaction.  
+This project uses **machine learning** to predict metro traffic volume based on **weather**, **holiday**, and **environmental** factors.  
+Accurate predictions can help metro authorities optimize:
+- Train frequency  
+- Staffing allocation  
+- Maintenance scheduling  
+- Targeted promotional campaigns  
 
-Improved staffing allocation
+---
 
-Reduced delays & congestion
+## 📊 Abstract
+We combined historical metro traffic data with environmental and holiday information to train **regression** and **classification** models.  
+The best results were achieved with **XGBoost**, providing:
+- **Regression:** RMSE = 435.95, R² = 0.952  
+- **Classification:** Accuracy = 91.24%  
 
-Targeted promotional campaigns
+---
 
-We combined historical metro traffic data with environmental factors and holidays. Multiple regression and classification models were tested, with XGBoost models achieving the best results.
+## 🎯 Objectives
+1. Perform **Exploratory Data Analysis (EDA)** to discover patterns.  
+2. Build **regression models** for predicting passenger volume.  
+3. Create **classification models** to categorize traffic levels.  
+4. Compare model performances to select the most effective one.  
 
-🎯 Objectives
-Perform EDA to identify traffic patterns.
+---
 
-Build regression models to predict passenger volume.
+## 📂 Dataset
+- **Source:** [Kaggle - Indian Metro Data](https://www.kaggle.com/datasets/umairnsr87/indian-metro-data)  
+- **Features Include:**
+  - Date & time
+  - Weather metrics (temperature, rain, visibility)
+  - Pollution data
+  - Holiday indicators
+  - Metro traffic volume
 
-Develop classification models to categorize traffic levels.
+---
 
-Compare performance and provide actionable recommendations.
+## 🛠 Tools & Libraries
+- **Python**: Pandas, NumPy, Matplotlib, Seaborn  
+- **Machine Learning**: Scikit-learn, XGBoost  
+- **Metrics**:
+  - Regression: RMSE, MAE, R²  
+  - Classification: Accuracy, Precision, Recall, F1-score  
 
-📂 Dataset
-Source: Kaggle - Indian Metro Data
+---
 
-Features include:
+## 🔍 Exploratory Data Analysis (Key Findings)
+### ⏰ Time-Based Insights
+- Morning peak: **6 AM – 8 AM**, Evening peak: **3 PM – 5 PM**
+- Weekdays busier than weekends
+- Seasonal highs in **March–May** & **October–December**
 
-Date & time
+### 🌦 Weather Insights
+- Mild temperatures (0–15°C) increase ridership
+- Heavy rainfall reduces travel
 
-Weather metrics (temperature, rain, visibility)
+### 🌫 Pollution Insights
+- Minimal short-term effect on metro usage
 
-Pollution data
+---
 
-Holiday indicators
+## 🤖 Models & Results
+### Regression Models
+| Model                   | RMSE    | MAE     | R²     |
+|-------------------------|---------|---------|--------|
+| Linear Regression       | 1802.50 | 1579.74 | 0.186  |
+| Random Forest Regressor | 463.43  | 262.45  | 0.946  |
+| **XGBRegressor**        | **435.95** | **261.79** | **0.952** |
 
-Metro traffic volume
+### Classification Models
+| Model                   | Accuracy | Precision | Recall | F1-score |
+|-------------------------|----------|-----------|--------|----------|
+| Random Forest Classifier| 88.43%   | 0.89      | 0.88   | 0.88     |
+| SVM                     | 60.34%   | 0.61      | 0.60   | 0.60     |
+| **XGBClassifier**       | **91.24%** | **0.91**  | **0.91**| **0.91** |
 
-🛠 Tools & Libraries
-Python: Pandas, NumPy, Matplotlib, Seaborn
+---
 
-ML Frameworks: Scikit-learn, XGBoost
+## 📌 Key Insights
+- **Time patterns** dominate metro usage.
+- **Weather** & **holidays** significantly affect ridership.
+- **Pollution** has negligible short-term impact.
 
-Evaluation Metrics:
+---
 
-Regression: RMSE, MAE, R²
+## ⚠ Limitations
+- Dependent on historical data patterns  
+- No real-time updates  
+- Does not include special events (concerts, strikes, etc.)  
+- Limited station-level detail  
 
-Classification: Accuracy, Precision, Recall, F1-score
+---
 
-🔍 Exploratory Data Analysis (EDA)
-Time-Based Insights
-Morning peak: 6 AM – 8 AM, Evening peak: 3 PM – 5 PM
+## 🚀 Future Scope
+1. Real-time data integration  
+2. Deep learning models (LSTM, Transformers)  
+3. Inclusion of special event data  
+4. Geospatial station-level analysis  
+5. Deployment in a live decision-support dashboard  
 
-Weekdays busier than weekends
+---
 
-Seasonal highs in March–May & Oct–Dec
+## 📦 Installation & Usage
+---bash
+# Clone this repository
+git clone https://github.com/yourusername/metro-traffic-prediction.git
 
-Weather Insights
-Mild temperatures (0–15°C) increase ridership
+# Navigate into the project folder
+cd metro-traffic-prediction
 
-Heavy rainfall reduces travel
+# Install dependencies
+pip install -r requirements.txt
 
-Pollution Insights
-Minimal short-term effect on metro usage
-
-🤖 Models & Results
-Regression
-Model	RMSE	MAE	R²
-Linear Regression	1802.5	1579.7	0.186
-Random Forest Regressor	463.4	262.4	0.946
-XGBRegressor	435.9	261.8	0.952
-
-Classification
-Model	Accuracy	Precision	Recall	F1-score
-Random Forest Classifier	88.43%	0.89	0.88	0.88
-SVM	60.34%	0.61	0.60	0.60
-XGBClassifier	91.24%	0.91	0.91	0.91
-
-📌 Key Insights
-Time-based patterns dominate metro usage.
-
-Weather & holidays significantly impact ridership.
-
-Pollution levels show negligible short-term effect.
-
-⚠ Limitations
-Dependence on historical data patterns
-
-Lack of real-time adaptation
-
-No inclusion of external events (concerts, strikes, etc.)
-
-Limited station-level granularity
-
-🚀 Future Scope
-Real-time data integration
-
-Deep learning models (LSTM, Transformers)
-
-Inclusion of external event data
-
-Geospatial station-level analysis
-
-Deployment in decision-support dashboards
-
-📚 References
-Kaggle Dataset
-
-Scikit-learn Documentation
-
-XGBoost Documentation
-
+# Run the main script
+python main.py
